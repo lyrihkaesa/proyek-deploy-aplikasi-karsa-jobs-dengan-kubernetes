@@ -1,0 +1,11 @@
+apiVersion: v1 # Versi API Kubernetes yang digunakan
+kind: Service # Jenis objek Kubernetes yang akan dibuat (Service)
+metadata:
+  name: mongo-service # Nama untuk Service yang akan dibuat
+spec:
+  selector: # Selektor yang digunakan untuk menentukan pod yang akan dijadikan target oleh Service
+    app: mongo # Menargetkan (query) pod yang memiliki label 'app: mongo'
+  ports:
+    - port: 27017 # Port yang akan di-expose oleh Service
+      targetPort: 27017 # Port pada pod yang akan ditargetkan oleh Service
+  clusterIP: None # Hseadless service

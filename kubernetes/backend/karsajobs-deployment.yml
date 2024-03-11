@@ -1,0 +1,36 @@
+apiVersion: apps/v1 # Versi API Kubernetes yang digunakan
+kind: Deployment # Jenis objek Kubernetes yang akan dibuat (Deployment)
+metadata:
+  name: karsajobs # Nama untuk Deployment yang akan dibuat
+  labels:
+    app: karsajobs # Label yang diterapkan pada Deployment
+spec:
+  replicas: 1 # Jumlah replika yang akan dibuat oleh Deployment
+  selector:
+    matchLabels:
+      app: karsajobs # Selektor yang digunakan untuk memilih pod yang dikelola oleh Deployment
+  template:
+    metadata:
+      labels:
+        app: karsajobs # Label yang akan diberikan pada pod yang dihasilkan oleh Deployment
+    spec:
+      containers:
+        - name: karsajobs # Nama container
+          image: ghcr.io/lyrihkaesa/karsajobs:latest # Image Docker yang akan digunakan untuk container
+          ports:
+            - containerPort: 8080 # Port yang akan di-expose oleh container
+          env: # Variabel lingkungan yang akan diset dalam container
+            - name: APP_PORT # Nama variabel lingkungan
+              value: '8080' # Nilai dari variabel lingkungan
+            - name: MONGO_HOST # Nama variabel lingkungan
+              value: mongo-service # Nilai dari variabel lingkungan, mengarah ke Service MongoDB sesuai 'metadata > name pada file mongo-service.yml'
+            - name: MONGO_USER # Nama variabel lingkungan
+              valueFrom:
+                secretKeyRef:
+                  name: mongo-secret # Nama Secret yang akan digunakan pada 'metadata > name pada file mongo-secret.yml'
+                  key: MONGO_ROOT_USERNAME # Kunci dalam Secret untuk mendapatkan nilai variabel lingkungan
+            - name: MONGO_PASS # Nama variabel lingkungan
+              valueFrom:
+                secretKeyRef:
+                  name: mongo-secret # Nama Secret yang akan digunakan pada 'metadata > name pada file mongo-secret.yml'
+                  key: MONGO_ROOT_PASSWORD # Kunci dalam Secret untuk mendapatkan nilai variabel lingkungan

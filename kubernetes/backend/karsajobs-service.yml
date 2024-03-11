@@ -1,0 +1,12 @@
+apiVersion: v1 # Versi API Kubernetes yang digunakan
+kind: Service # Jenis objek Kubernetes yang akan dibuat (Service)
+metadata:
+  name: karsajobs # Nama untuk Service yang akan dibuat
+spec:
+  type: NodePort # Jenis Service yang digunakan (NodePort)
+  selector: # Selektor yang digunakan untuk menentukan pod yang akan dijadikan target oleh Service
+    app: karsajobs # Menargetkan (query) pod yang memiliki label  'app: karsajobs'
+  ports:
+    - port: 8080 # Port yang akan di-expose oleh Service
+      targetPort: 8080 # Port pada pod yang akan ditargetkan oleh Service
+      nodePort: 30096 # Port yang digunakan oleh node karena menggunakan 'type: NodePort'

@@ -1,0 +1,11 @@
+apiVersion: v1 # Versi API Kubernetes yang digunakan
+kind: ConfigMap # Jenis objek Kubernetes yang akan dibuat (ConfigMap)
+metadata:
+  name: mongo-configmap # Nama untuk ConfigMap yang akan dibuat
+data:
+  # Data yang akan disimpan dalam ConfigMap, menggunakan format multi-line string
+  # storage: Konfigurasi untuk penyimpanan MongoDB
+  # dbPath: Path untuk lokasi penyimpanan database MongoDB
+  mongo.conf: |
+    storage:
+      dbPath: /data/db
