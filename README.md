@@ -14,6 +14,20 @@
 
 ---
 
+## Menambahkan Submodule Repository
+
+Berikut cara menambahkan submodule repository [lyrihkaesa/a433-microservices](https://github.com/lyrihkaesa/a433-microservices) branch `karsajobs` dan `karsajobs-ui` pada repository ini:
+
+```bash
+git submodule add -b karsajobs https://github.com/lyrihkaesa/a433-microservices karsajobs
+```
+
+```bash
+git submodule add -b karsajobs-ui https://github.com/lyrihkaesa/a433-microservices karsajobs-ui
+```
+
+---
+
 ## 🙏 Thanks To
 
 - [Indosat Ooredoo Hutchison - IDCamp 2023](https://idcamp.ioh.co.id/)
