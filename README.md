@@ -33,3 +33,5 @@ git submodule add -b karsajobs-ui https://github.com/lyrihkaesa/a433-microservic
 - [Indosat Ooredoo Hutchison - IDCamp 2023](https://idcamp.ioh.co.id/)
 - [Dicoding - Belajar Membangun Arsitektur Microservices](https://www.dicoding.com/academies/433)
 - [Mentor - Gesang Wibawono](#)
+
+> [Submission 1: Proyek Deploy Aplikasi Item App dengan Docker Compose](https://github.com/lyrihkaesa/a433-microservices/tree/proyek-pertama)
