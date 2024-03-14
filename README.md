@@ -34,4 +34,5 @@ git submodule add -b karsajobs-ui https://github.com/lyrihkaesa/a433-microservic
 - [Dicoding - Belajar Membangun Arsitektur Microservices](https://www.dicoding.com/academies/433)
 - [Mentor - Gesang Wibawono](#)
 
-> [Submission 1: Proyek Deploy Aplikasi Item App dengan Docker Compose](https://github.com/lyrihkaesa/a433-microservices/tree/proyek-pertama)
+> [Submission 1: Proyek Deploy Aplikasi Item App dengan Docker Compose](https://github.com/lyrihkaesa/a433-microservices/tree/proyek-pertama)  
+> [Submission 3: Proyek Implementasi Asynchronous Communication pada Aplikasi E-Commerce App](https://github.com/lyrihkaesa/proyek-implementasi-asynchronous-communication-pada-aplikasi-e-commerce-app)
